@@ -9,13 +9,13 @@
    *
    * @author evalcode.net
    */
-  class Cache_Scriptlet_Clear extends Scriptlet
+  class Cache_Scriptlet_Clear extends Http_Scriptlet
   {
     // OVERRIDES/IMPLEMENTS
     public function post()
     {
       if(false===isset($_SERVER['REMOTE_ADDR']) || false===in_array($_SERVER['REMOTE_ADDR'], Runtime::getManagementIps()))
-        throw new Runtime_Http_Exception('cache/clear', 'Forbidden', Runtime_Http_Exception::FORBIDDEN);
+        throw new Http_Exception('cache/clear', 'Forbidden', Http_Exception::FORBIDDEN);
 
       Runtime::cache()->clear();
       @clearstatcache(true);
