@@ -20,7 +20,7 @@ namespace Components;
       if(false===isset($_SERVER['REMOTE_ADDR']) || false===in_array($_SERVER['REMOTE_ADDR'], Runtime::getManagementIps()))
         throw new Http_Exception('cache/clear', 'Forbidden', Http_Exception::FORBIDDEN);
 
-      Runtime::cache()->clear();
+      Cache::clear();
       @clearstatcache(true);
     }
 
