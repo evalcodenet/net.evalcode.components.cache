@@ -14,14 +14,14 @@ namespace Components;
    */
   class Cache_Scriptlet_Clear extends Http_Scriptlet
   {
-    // OVERRIDES/IMPLEMENTS
+    // OVERRIDES
     public function post()
     {
       if(false===isset($_SERVER['REMOTE_ADDR']) || false===in_array($_SERVER['REMOTE_ADDR'], Runtime::getManagementIps()))
-        throw new Http_Exception('cache/clear', 'Forbidden', Http_Exception::FORBIDDEN);
+        throw new Http_Exception('components/cache/scriptlet/clear', 'Forbidden', Http_Exception::FORBIDDEN);
 
       Cache::clear();
-      @clearstatcache(true);
+      clearstatcache(true);
     }
 
     public function get()
