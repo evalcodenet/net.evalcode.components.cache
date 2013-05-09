@@ -12,8 +12,7 @@ namespace Components;
    *
    * @author evalcode.net
    *
-   * @Application(cache)
-   * @Path(resource)
+   * @application cache
    */
   class Cache_Resource extends Rest_Resource
   {
