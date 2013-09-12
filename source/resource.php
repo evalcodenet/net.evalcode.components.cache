@@ -7,8 +7,7 @@ namespace Components;
   /**
    * Cache_Resource
    *
-   * @package net.evalcode.components
-   * @subpackage cache
+   * @package net.evalcode.components.cache
    *
    * @author evalcode.net
    *
