@@ -23,7 +23,7 @@ namespace Components;
     public function clear()
     {
       if(false===Runtime::isManagementAccess())
-        throw Http_Exception::forbidden('cache/scriptlet/clear');
+        throw new Http_Exception('cache/resource', null, Http_Exception::FORBIDDEN);
 
       Cache::clear();
       clearstatcache(true);
